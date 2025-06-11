@@ -1,0 +1,21 @@
+package method;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Files {
+    public static void main(String[] args) {
+        String[] lines = {"First line", "Second line", "Third line"};
+
+        try {
+        FileWriter  mywriter = new FileWriter("abc.txt") {
+            for (String line : lines) {
+                writer.write(line);
+                writer.newLine();  
+            }
+            System.out.println("successfully wrote to the file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
