@@ -5,7 +5,7 @@ import java.io.*;
 public class Day6task1 {
     static ArrayList<String> names = new ArrayList<>(List.of("Narmatha", "Shree"));
     static HashMap<Integer, List<String>> courses = new HashMap<>();
-    static int id = 1003; // Start from 1003 as two students are pre-added
+    static int id = 1003; // 
 
     public static void main(String[] args) {
         
