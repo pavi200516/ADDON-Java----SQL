@@ -8,7 +8,7 @@ public class Day6task1 {
     static int id = 1003; // Start from 1003 as two students are pre-added
 
     public static void main(String[] args) {
-        // Pre-add courses for Narmatha and Shree
+        
         courses.put(1001, List.of("Java", "HTML"));
         courses.put(1002, List.of("Python", "CSS"));
 
