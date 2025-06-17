@@ -1,0 +1,74 @@
+mysql> create database student;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| emp                |
+| employe            |
+| employeee          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| student            |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use student;
+Database changed
+mysql> create table student(
+    -> rollno int(23),
+    -> name varchar(32),
+    -> marks int(34),
+    -> fees int(54),
+    -> );
+mysql> create table student(
+    -> rollno int(23),
+    -> name varchar(32),
+    -> marks int(34),
+    -> fees int(54)
+    -> );
+Query OK, 0 rows affected, 3 warnings (0.06 sec)
+
+mysql> insert into student(rollno,name,marks,fees)values
+    -> (1,'swe','86',72000),
+    -> (2,'pavi','89',76000),
+    -> (3,'siva','39',86000),
+    -> (4,'gokzz','98'87000),
+    -> (5,'sanju','78',57000);
+mysql> insert into student(rollno,name,marks,fees)values
+    -> (1,'swe','86',72000),
+    -> (2,'pavi','89',76000),
+    -> (3,'siva','39',86000),
+    -> (4,'gokzz','98',87000),
+    -> (5,'sanju','78',57000);
+Query OK, 5 rows affected (0.04 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++--------+-------+-------+-------+
+| rollno | name  | marks | fees  |
++--------+-------+-------+-------+
+|      1 | swe   |    86 | 72000 |
+|      2 | pavi  |    89 | 76000 |
+|      3 | siva  |    39 | 86000 |
+|      4 | gokzz |    98 | 87000 |
+|      5 | sanju |    78 | 57000 |
++--------+-------+-------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student
+    -> where marks>80;
++--------+-------+-------+-------+
+| rollno | name  | marks | fees  |
++--------+-------+-------+-------+
+|      1 | swe   |    86 | 72000 |
+|      2 | pavi  |    89 | 76000 |
+|      4 | gokzz |    98 | 87000 |
++--------+-------+-------+-------+
+3 rows in set (0.00 sec)
+
+mysql>
+
+
