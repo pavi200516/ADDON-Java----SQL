@@ -1,1 +1,9 @@
-
+mysql> select books
+    -> from student
+    -> where books like 'm%';
++--------------------+
+| books              |
++--------------------+
+| maths for computer |
+| maya designing     |
++--------------------+
