@@ -1,0 +1,66 @@
+mysql> create table information(
+      	-> sno int,studentname varchar(25),
+      	->dept varchar(25),
+      	->course varchar(30),
+      	->sal int,
+      	->product varchar(20),
+      	->price int
+      	->);
+        Query OK,
+
+mysql> insert into information(sno,studentname,dept,course,sal,product,price) values 
+        ->(1,'pavi','CT','WD',40000,'phone',25000),
+        -> (2,'gokzz','CT','WD',50000,'slipper',1000),
+        -> (3,'swe','IT','FSD',45000,'iphone',100000),
+        -> (4,'sanju','IT','FSD',39000,'smartwatch',10000),
+        -> (5,'siva','CS','SD',41000,'jimkas',1500);
+        Query OK, 
+
+
+mysql> select * from information;
+          +------+-----------+------+--------+-------+------------+----------+----
+          | sno  | studentname   | dept | course | sal   | product    | price    |
+          +------+-----------+------+--------+-------+------------+----------+----
+          |    1 | pavi       | CT   | WD     | 40000 | phone      |    25000 |
+          |    2 | gokzz        | CT   | WD     | 50000 | slipper    |     1000 |
+          |    3 | swe          | IT   | FSD    | 45000 | iphone     |   100000 |
+          |    4 | sanju         | IT   | FSD    | 39000 | smartwatch |    10000 |
+          |    5 | siva        | CS   | SD     | 41000 | jimkas     |     1500 |
+          +------+-----------+------+--------+-------+------------+--------------+
+
+mysql> select count(stuname),course
+        -> from information
+        -> group by course;
+          +----------------+--------+---+
+          | count(studentname) | course |
+          +----------------+--------+---+
+          |              2 | WD         |
+          |              2 | FSD        |
+          |              1 | SD         |
+          +----------------+--------+---+
+
+mysql> select avg(sal),dept
+        -> from information
+        -> group by dept;
+          +------------+------+
+          | avg(sal)   | dept |
+          +------------+------+
+          | 45000.0000 | CT   |
+          | 42000.0000 | IT   |
+          | 41000.0000 | CS   |
+          +------------+------+
+mysql> select max(price)
+      -> from information;
+      +---------------+
+      | max(price)    |
+      +---------------+
+      |        100000 |
+      +---------------+
+
+mysql> select min(price)
+      -> from information;
+      +---------------+
+      | min(price)     |
+      +---------------+
+      |          1000 |
+      +---------------+-
