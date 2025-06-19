@@ -1,0 +1,41 @@
+package JDBCMAIN;
+
+import java.sql.*;
+
+public class jdbcmain {
+
+	public static void main(String[] args) throws Exception {
+		// Class.forName("com.mysql.cj.jdbc.Driver");
+
+		String Url = "jdbc:mysql://localhost:3306/kgcas";
+		String userName = "root";
+		String Password = "";
+
+		// get connection
+		// connection=interface
+		Connection connect = DriverManager.getConnection(Url, userName, Password);
+		System.out.println("Driver Loaded");
+
+		// create statement
+		//Statement st = connect.createStatement();
+		int cid=03;
+		String cname="IMS";
+		// Execute query
+		String sql = "insert into course values(?,?)";
+		PreparedStatement st=connect.prepareStatement(sql);
+		st.setInt(1, cid);
+		st.setString(2, cname);
+		st.executeUpdate(sql);
+		System.out.println("data inserted done using prepared statements");
+		//ResultSet rs = st.executeQuery(sql);
+		//while(rs.next()) {
+		//	System.out.println(rs.getString(1));
+		//}
+		//rs.next();
+		//System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3));
+		//rs.next();
+		//System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3));
+
+	}
+
+}
